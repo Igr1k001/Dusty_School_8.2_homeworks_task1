@@ -1,0 +1,9 @@
+.Loader {
+    height: 50px;
+    width: 600px;
+    border: 1px solid red;
+}
+.Loader-Stripe {
+    height: 50px;
+    background-color: blue;
+}
