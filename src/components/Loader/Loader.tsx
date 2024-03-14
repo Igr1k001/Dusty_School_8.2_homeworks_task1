@@ -9,6 +9,7 @@ export interface ILoaderProps {
 }
 
 let eventMouseDown: boolean;
+const maxWidth = 600;
 
 export const Loader: React.FC<ILoaderProps> = ({ onLoadEnd }) => {
     const [position, setPosition] = useState(0);
@@ -21,8 +22,8 @@ export const Loader: React.FC<ILoaderProps> = ({ onLoadEnd }) => {
         if (eventMouseDown) {
             setPosition(event.clientX);
         }
-        if (position === 600) {
-            setPosition(600);
+        if (position === maxWidth) {
+            setPosition(maxWidth);
             onLoadEnd();
         }
     }
@@ -38,7 +39,7 @@ export const Loader: React.FC<ILoaderProps> = ({ onLoadEnd }) => {
             onMouseDown={handlerMouseDown}
             onMouseUp={handlerMouseUp}
         >
-            <div className={cnLoader('Stripe')} style={{width: position}}></div>
+            <div className={cnLoader('Stripe')} style={{ width: position }}></div>
         </div>
     );
 }
